@@ -11,6 +11,7 @@
 </head>
 <body>
   <header>
+    <canvas id="logo" width="120" height="120">Eden Alemayehu logo</canvas>
     <h1>Eden Alemayehu</h1>
     <img src="images/profile.jpg" alt="Portrait of Eden against a programming themed background" title="Eden Alemayehu" width="200" height="200">
     <p>Software Engineering student at <abbr title="Addis Ababa Science and Technology University">AASTU</abbr>, building things with code and enjoying debugging at midnight.</p>
@@ -94,6 +95,7 @@
         <label for="lvl-cpp">C++</label>
         <meter id="lvl-cpp" value="0.65" min="0" max="1">65%</meter>
       </p>
+      <canvas id="chart" width="300" height="150">Bar chart of Eden's skill levels</canvas>
       <h3>My Learning Roadmap</h3>
       <ol type="1">
         <li>HTML structure and content</li>
@@ -301,5 +303,40 @@ int main() {
     <p>&copy; 2026 Eden Alemayehu. All rights reserved.</p>
     <p>Last updated: <time datetime="2026-11-02">2 November 2026</time></p>
   </footer>
+  <script>
+    const canvas = document.getElementById('logo');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = "#1f5fa8";
+    ctx.fillRect(0, 0, 120, 120);
+
+    ctx.beginPath();
+    ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    ctx.fillStyle = "#1f5fa8";
+    ctx.font = "bold 36px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("EA", 60, 62);
+
+    const chart = document.getElementById('chart');
+    const chartCtx = chart.getContext('2d');
+
+    chartCtx.fillStyle = "#1f5fa8";
+    chartCtx.fillRect(25, 130 - 66, 40, 66);
+    chartCtx.fillRect(90, 130 - 78, 40, 78);
+    chartCtx.fillRect(155, 130 - 36, 40, 36);
+    chartCtx.fillRect(220, 130 - 78, 40, 78);
+
+    chartCtx.fillStyle = "#000000";
+    chartCtx.font = "12px Arial";
+    chartCtx.textAlign = "center";
+    chartCtx.fillText("HTML", 45, 145);
+    chartCtx.fillText("Python", 110, 145);
+    chartCtx.fillText("JavaScript", 175, 145);
+    chartCtx.fillText("C++", 240, 145);
+  </script>
 </body>
 </html>
